@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/iwasawayuusuke/Dropbox/ProjectOnIJICAI/main'
+let g:netrw_dirhist_2='/Volumes/IWASAWA/Experiment/Sawaki_1205/ROUTE1/AcceForMATLAB/Stop-Time'
+let g:netrw_dirhist_3='/Users/iwasawayuusuke/Dropbox/Programing/Java/iosched/android/src/com/google'
