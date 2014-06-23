@@ -1,0 +1,14 @@
+#ssh
+alias ssh-rd4='ssh iwasawa@133.11.90.86'
+alias ssh-ylab='ssh iwasawa@YLabMacPro.1284357760.members.btmm.icloud.com'
+
+#vim（MacVimをvimとして起動するように）
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
+#General
+alias ll='ls -a -F'
+
+#Tmux
+alias tma='tmux attach'
+alias tmd='tmux detach'

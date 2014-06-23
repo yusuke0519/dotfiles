@@ -1,0 +1,4 @@
+#Python関連　
+#
+PYTHONPATH=~/Wheelchair/Python/lib/:$PYTHONPATH
+export PYTHONPATH

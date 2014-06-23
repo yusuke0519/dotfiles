@@ -1,11 +1,6 @@
-alias toD='cd ~/Dropbox/Research/Analysis/data'
-alias Kuniya='cd ~/Dropbox/Research/Analysis/data/Kuniya/ROUTE1/Analysis'
-alias Hoshi='cd ~/Dropbox/Research/Analysis/data/Hoshi/ROUTE1/Analysis'
-alias Ikeda='cd ~/Dropbox/Research/Analysis/data/Ikeda/ROUTE1/Analysis'
-alias Oshida='cd ~/Dropbox/Research/Analysis/data/Oshida/ROUTE1/Analysis'
-alias Goto='cd ~/Dropbox/Research/Analysis/data/Goto/ROUTE1/Analysis'
-alias Takami='cd ~/Dropbox/Research/Analysis/data/Takami/ROUTE1/Analysis'
-alias rd4='ssh iwasawa@133.11.90.86'
+#alias情報の読み取り
+source ~/.zsh.alias
+
 
 export EDITOR=vim
 export PATH=$PATH:/usr/local/bin
@@ -20,11 +15,6 @@ export PATH=$PATH:~/Dropbox/rubyModule
 export PATH="/Users/iwasawayuusuke/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools:$PATH"
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
-
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-
-alias ll='ls -a -F'
 
 # git用の設定
 fpath=(~/.zsh/completion $fpath)
@@ -177,17 +167,6 @@ function cd() {
   builtin cd $@ && ls;
 }
 
-
-#Python関連　
-#
-PYTHONPATH=~/Wheelchair/Python/lib/:$PYTHONPATH
-export PYTHONPATH
-
-
-#SSH 関連
-alias ssh-ylab='ssh iwasawa@YLabMacPro.1284357760.members.btmm.icloud.com'
-
-#TMUX関連
-alias tma='tmux attach'
-alias tmd='tmux detach'
+#Python関連読み込み
+source ~/.zsh.python
 
