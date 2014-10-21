@@ -9,16 +9,16 @@ set wrapscan "最後まで検索したら先頭に戻る
 set title "タイトルを表示
 set backspace=indent,eol,start
 set tw=0
+
 "Color Preference
 syntax on "カラー設定を有効に
 set background=dark
 colorscheme desert
-"カラー設定を変更
 
 set wildmenu "コマンドラインを拡張モードに
 
-set tabstop=2 "タブに対応する空白の数
-set softtabstop=0
+set expandtab
+set softtabstop=2
 set shiftwidth=2
 set noexpandtab
 set noautoindent
@@ -82,6 +82,10 @@ NeoBundle 'Shougo/neosnippet'
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 
+"PEP-8(Python Coding Rules)"
+NeoBundle 'scrooloose/syntastic'
+
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 "Installしたいファイルリストを書く
 "
 "
