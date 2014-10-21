@@ -1,0 +1,37 @@
+install apple-gcc42
+install cloog
+install doxygen
+install freetype --universal
+install gcc
+install gdbm
+install ghostscript
+install git
+install gmp
+install graphviz
+install imagemagick
+install isl
+install jbig2dec
+install jpeg
+install libevent
+install libmpc
+install libpng --universal
+install libtiff
+install libtool
+install little-cms2
+install mpfr
+install mysql
+install nkf
+install openssl
+install pcre
+install pkg-config
+install pyqt
+install python
+install qt
+install readline
+install reattach-to-user-namespace
+install sip
+install sqlite
+install tmux
+install wget
+install zeromq
+install zsh
