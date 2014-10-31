@@ -1,4 +1,5 @@
 #Python関連　
 #
-PYTHONPATH=~/Wheelchair/Python/lib/:$PYTHONPATH
+PYTHONPATH=~/lib/:$PYTHONPATH
+PYTHONPATH=~/lib/scikit-learn:$PYTHONPATH
 export PYTHONPATH

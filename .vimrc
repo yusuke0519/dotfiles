@@ -43,6 +43,11 @@ augroup END
 :hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
+" Neard Tree 関連" 
+"NEARD TREEを自動で起動""
+autocmd VimEnter * execute 'NERDTree'  
+let g:NERDTreeShowBookmarks=1
+
 "検索結果をハイライト
 set hlsearch
 
