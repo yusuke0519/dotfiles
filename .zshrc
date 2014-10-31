@@ -170,3 +170,5 @@ function cd() {
 #Python関連読み込み
 source ~/.zsh.python
 
+#MacTexの指示
+eval `/usr/libexec/path_helper -s`
