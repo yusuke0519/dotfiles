@@ -1,5 +1,4 @@
 #Python関連　
 #
 PYTHONPATH=~/lib/:$PYTHONPATH
-PYTHONPATH=~/lib/scikit-learn:$PYTHONPATH
 export PYTHONPATH

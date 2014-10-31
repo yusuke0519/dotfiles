@@ -12,3 +12,6 @@ alias ll='ls -a -F'
 #Tmux
 alias tma='tmux attach'
 alias tmd='tmux detach'
+
+#Python
+alias penv='source ~/dotfiles/penv1/bin/activate'

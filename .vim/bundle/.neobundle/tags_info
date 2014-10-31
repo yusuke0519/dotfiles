@@ -1,0 +1,9 @@
+AutoClose
+dbext.vim
+neobundle.vim
+neocomplcache.vim
+neosnippet
+nerdtree
+syntastic
+vim-rails
+vimproc
