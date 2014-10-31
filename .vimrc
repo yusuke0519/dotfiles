@@ -55,7 +55,13 @@ filetype off                   " Required!
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
-	call neobundle#rc(expand('~/.vim/bundle/'))
+	" Deprecated
+	" call neobundle#rc(expand('~/.vim/bundle/'))
+	
+	" New
+	call neobundle#begin(expand('~/.vim/bundle/'))
+	NeoBundleFetch 'Shougo/neobundle.vim'
+	call neobundle#end()
 endif
 
 
@@ -78,7 +84,9 @@ NeoBundle 'AutoClose'
 
 "補完＆スニペット"
 NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 
@@ -113,14 +121,13 @@ let g:neocomplcache_dictionary_filetype_lists = {
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-	return neocomplcache#smart_close_popup() . "\<CR>"
-endfunction
-" <TAB>: completion.
+"Recommended key-mappings.
+"<CR>: close popup and save indent.
+ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+ function! s:my_cr_function()
+ 	return neocomplcache#smart_close_popup() . "\<CR>"
+ endfunction
+"<TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
@@ -128,27 +135,24 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-
-
-
-"NeoSnippet"
-"Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-			\ "\<Plug>(neosnippet_expand_or_jump)"
-			\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-			\ "\<Plug>(neosnippet_expand_or_jump)"
-			\: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-	set conceallevel=2 concealcursor=i
-endif"
+" "NeoSnippet"
+" "Plugin key-mappings.
+ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+ xmap <C-k>     <Plug>(neosnippet_expand_target)
+ 
+ " SuperTab like snippets behavior.
+ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ 			\ "\<Plug>(neosnippet_expand_or_jump)"
+ 			\: pumvisible() ? "\<C-n>" : "\<TAB>"
+ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ 			\ "\<Plug>(neosnippet_expand_or_jump)"
+ 			\: "\<TAB>"
+ 
+ " For snippet_complete marker.
+ if has('conceal')
+ 	set conceallevel=2 concealcursor=i
+ endif"
 
 "Latex プラグインの設定
 filetype plugin on
