@@ -1,4 +1,5 @@
 #Python関連　
 #
 PYTHONPATH=~/lib/:$PYTHONPATH
+PYTHONPATH=~/SpatioTemporalProject/lib/:$PYTHONPATH
 export PYTHONPATH
