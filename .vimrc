@@ -60,13 +60,9 @@ filetype off                   " Required!
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
-	" Deprecated
-	" call neobundle#rc(expand('~/.vim/bundle/'))
+	call neobundle#rc(expand('~/.vim/bundle/'))
 	
-	" New
-	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
-	call neobundle#end()
 endif
 
 
