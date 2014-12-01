@@ -2,8 +2,8 @@
 #
 PYTHONPATH=~/lib/:$PYTHONPATH
 PYTHONPATH=~/SpatioTemporalProject/lib/:$PYTHONPATH
-
 PYTHONPATH=~/lib/pylearn2/pylearn2/scripts/:$PYTHONPATH
 
 export PYTHONPATH
+
 export PYLEARN2_DATA_PATH=~/pylearn2_data
