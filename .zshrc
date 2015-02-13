@@ -13,6 +13,9 @@ export PATH=$PATH:/Applications/MATLAB_R2011b.app/bin
 export PATH=$PATH:~/Dropbox/rubyModule
 ### android-sdk
 export PATH="/Users/iwasawayuusuke/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools:$PATH"
+
+# Pylearn2
+export PATH=$PATH:~/lib/pylearn2/pylearn2/scripts
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 
