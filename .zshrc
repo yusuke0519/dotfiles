@@ -16,6 +16,7 @@ export PATH="/Users/iwasawayuusuke/Downloads/adt-bundle-mac-x86_64-20130917/sdk/
 
 # Pylearn2
 export PATH=$PATH:~/lib/pylearn2/pylearn2/scripts
+export PATH=$PATH:~/GoogleDrive/Wheelchair2012Result/lib
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 

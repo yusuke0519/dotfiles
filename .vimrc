@@ -2,7 +2,7 @@
 "ファイルエンコード
 
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set ignorecase "検索のときに大文字小文字を区別しない
 set smartcase "検索のときに大文字が含まれている場合は区別して検索する
 set wrapscan "最後まで検索したら先頭に戻る
@@ -50,11 +50,9 @@ let g:NERDTreeShowBookmarks=1
 
 "検索結果をハイライト
 set hlsearch
-
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "Neobundle関連の設定
-
 set nocompatible               " Be iMproved
 filetype off                   " Required!
 
@@ -67,6 +65,7 @@ endif
 
 
 " Let NeoBundle manage NeoBundle
+" Shougoさん作
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
 			\ 'build': {
@@ -76,24 +75,29 @@ NeoBundle 'Shougo/vimproc', {
 			\ 'unix': 'make -f make_unix.mak',
 			\ }
 \}
-
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-rails'
-
-NeoBundle 'dbext.vim'
-NeoBundle 'AutoClose'
-
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 "補完＆スニペット"
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-" Recommended to install
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle ''
+
+"Filer
+NeoBundle 'scrooloose/nerdtree'
+
+"Git"
+NeoBundle "tpope/vim-fugitive"
+"何するのかあんまり覚えてない"
+NeoBundle 'dbext.vim'
+NeoBundle 'AutoClose' 
 
 "PEP-8(Python Coding Rules)"
 NeoBundle 'scrooloose/syntastic'
-
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-scripts/Align'
+NeoBundle 'vim-scripts/YankRing.vim'
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 "Installしたいファイルリストを書く
 "
@@ -180,3 +184,7 @@ let g:Tex_ViewRule_pdf = 'open -a Preview.app'
 ""テンプレートの読み込み
 autocmd BufNewFile *.py 0r ~/.vim/templates/python.py
 autocmd BufNewFile *.md 0r ~/.vim/templates/markdown.md
+
+"Virtual Env + Quickrun用の設定
+"let g:quickrun_config = {}
+"let g:quickrun_config['*'] = {'runner': 'vimproc'}
