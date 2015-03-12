@@ -1,8 +1,11 @@
 AutoClose
 dbext.vim
+jedi-vim
 neobundle.vim
 neocomplcache.vim
+neocomplete
 neosnippet
+neosnippet-snippets
 nerdtree
 syntastic
 vim-rails
