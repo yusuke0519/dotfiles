@@ -1,7 +1,6 @@
 #alias情報の読み取り
 source ~/.zsh.alias
 
-
 export EDITOR=vim
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/git/bin
@@ -13,8 +12,19 @@ export PATH=$PATH:/Applications/MATLAB_R2011b.app/bin
 export PATH=$PATH:~/Dropbox/rubyModule
 ### android-sdk
 export PATH="/Users/iwasawayuusuke/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools:$PATH"
-export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
+export PATH=$PATH:~/lib/pylearn2/pylearn2/scripts/
 
+## Jobman
+export PATH=$PATH:~/lib/Jobman/bin
+
+## Handmade Python Scripts
+export PATH=$PATH:~/GoogleDrive/Wheelchair2012Result/lib/
+
+## Path for GPU
+export PATH=$PATH:/Developer/NVIDIA/CUDA-6.5/bin/
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-6.5/lib:$DYLD_LIBRARY_PATH
+## Path for Manuals
+export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 # git用の設定
 fpath=(~/.zsh/completion $fpath)
@@ -44,45 +54,62 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([%0-9]#)*=0=01;31
 autoload -U zcalc
 autoload zed
 
-#予測入力させる
-#autoload predict-on
-#zle -N predict-on
-#zle -N predict-off
-#bindkey '^X^P' predict-on
-#bindkey '^O' predict-off
-#zstyle ':predict' verbose true
+# vimライクな操作設定
+bindkey -v
 
-#入力途中の履歴補完を有効化する
+########### 履歴関係#############
+# 履歴保存場所
+HISTFILE=$HOME/.zsh_history
+# メモリに保存される履歴数
+HISTSIZE=10000
+# 履歴ファイルに保存される履歴数
+SAVEHIST=1000000
+# ???
+PATH=${PATH}:~/bin
+#直前と同じコマンドをヒストリに追加しない
+setopt hist_ignore_dups
+#ヒストリの一覧を読みやすい形に変更
+HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
+# 全履歴を一覧表示する
+function history-all { history -E 1 }
+# 履歴の選択(Zawの設定)
+function mkcd(){mkdir -p $1 && cd $1}
+source /Users/iwasawayuuyuu/zaw/zaw.zsh
+bindkey '^h' zaw-history
+# 入力途中の履歴補完を有効化する
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
+# 入力途中の履歴検索
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+# 履歴を共有
+setopt share_history
+# インクリメンタルからの検索
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
+#コマンド履歴検索設定
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
+setopt hist_ignore_all_dups
+# ヒストリを呼び出してから実行する間に一旦編集可能
+setopt hist_verify
+# 余分な空白は詰めて記録
+setopt hist_reduce_blanks  
+# 古いコマンドと同じものは無視 
+setopt hist_save_no_dups
+# historyコマンドは履歴に登録しない
+setopt hist_no_store
+# 補完時にヒストリを自動的に展開         
+setopt hist_expand
+# 履歴をインクリメンタルに追加
+setopt inc_append_history
 
-#入力途中の履歴補完
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
 
-#インクリメンタルサーチの設定
-#bindkey "^R" history-incremental-search-backward
-#bindkey "^S" history-incremental-search-forward
-
-#履歴のインクリメンタル検索でワイルドカード利用可能
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
-
-#プロンプト関係
+########### プロンプト関係#############
 PROMPT="[%n@%m %~]%(!.#.$) "
-#PROMPT2="%n %_%%"
-#SPROMPT="%r is correct? [n,y,a,e]: "
-#RPROMPT="[%l/zsh]"
-
-#ヒストリーサイズ設定
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-PATH=${PATH}:~/bin
-
-#ヒストリの一覧を読みやすい形に変更
-HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 
 #補完リストが多いときに尋ねない
 LISTMAX=1000
@@ -104,16 +131,11 @@ setopt nobeep
 setopt list_types
 #補完候補を一覧表示
 setopt auto_list
-#直前と同じコマンドをヒストリに追加しない
-setopt hist_ignore_dups
 #TABで順に補完候補を切り替える
 setopt auto_menu
 #補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=1
 
-
-
-### Prompt ###
 # プロンプトに色を付ける
 autoload -U colors; colors
 # 一般ユーザ時
@@ -167,8 +189,9 @@ function cd() {
   builtin cd $@ && ls;
 }
 
+#MacTexの関連
+eval `/usr/libexec/path_helper -s`
+
 #Python関連読み込み
 source ~/.zsh.python
 
-#MacTexの指示
-eval `/usr/libexec/path_helper -s`
