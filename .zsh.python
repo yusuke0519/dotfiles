@@ -8,3 +8,4 @@ PYTHONPATH=~/GoogleDrive/Wheelchair2012Result/lib/:$PYTHONPATH
 export PYTHONPATH
 
 export PYLEARN2_DATA_PATH=~/pylearn2_data
+export PYLEARN2_VIEWER_COMMAND="open -Wn"
