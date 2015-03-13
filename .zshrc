@@ -74,8 +74,10 @@ HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 function history-all { history -E 1 }
 # 履歴の選択(Zawの設定)
 function mkcd(){mkdir -p $1 && cd $1}
-source /Users/iwasawayuuyuu/zaw/zaw.zsh
+source ~/zsh_plugins/zaw/zaw.zsh
 bindkey '^h' zaw-history
+bindkey '^g' zaw-git-branches
+bindkey '^k' zaw-cdr
 # 入力途中の履歴補完を有効化する
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
