@@ -1,9 +1,16 @@
+Align
 AutoClose
+YankRing.vim
 dbext.vim
 neobundle.vim
 neocomplcache.vim
+neocomplete
+neomru.vim
 neosnippet
+neosnippet-snippets
 nerdtree
 syntastic
-vim-rails
+unite.vim
+vim-fugitive
+vim-surround
 vimproc
