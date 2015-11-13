@@ -1,0 +1,26 @@
+# 環境変数の設定
+export EDITOR='vim'
+export SHELL='zsh'
+export TERM=xterm-256color
+
+# Basic path
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/git/bin
+export PATH=$PATH:/local/bin
+export PATH=$PATH:/sbin
+export PATH=$PATH:$HOME/dotfiles/bin
+# Pylearn2
+export PATH=$PATH:$HOME/lib/pylearn2/pylearn2/scripts/
+# Jobman
+export PATH=$PATH:~/lib/Jobman/bin
+# GPU
+export PATH=$PATH:/usr/bin/
+export CUDA_HOME=/usr/bin/
+export LD_LIBRARY_PATH=/usr/bin/lib64:$LD_LIBRARY_PATH
+# Manual
+export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

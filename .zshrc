@@ -1,41 +1,22 @@
-#alias情報の読み取り
-source ~/.zsh.alias
-
-export EDITOR=vim
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/local/git/bin
-export PATH=$PATH:/local/bin
-export PATH=$PATH:$HOME/dotfiles/bin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/Developer/android-sdk/tools
-export PATH=$PATH:/Applications/MATLAB_R2011b.app/bin
-export PATH=$PATH:~/Dropbox/rubyModule
-### android-sdk
-export PATH="/Users/iwasawayuusuke/Downloads/adt-bundle-mac-x86_64-20130917/sdk/platform-tools:$PATH"
-export PATH=$PATH:~/lib/pylearn2/pylearn2/scripts/
-
-## Jobman
-export PATH=$PATH:~/lib/Jobman/bin
-
-## Handmade Python Scripts
-export PATH=$PATH:~/GoogleDrive/Wheelchair2012Result/lib/
-
-## Path for GPU
-export PATH=$PATH:/Developer/NVIDIA/CUDA-6.5/bin/
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-6.5/lib:$DYLD_LIBRARY_PATH
-## Path for Manuals
-export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
-
-# git用の設定
-fpath=(~/.zsh/completion $fpath)
-
-autoload -U compinit
-compinit -u
+# 外部設定ファイルの読み込み
+# 1. 環境変数
+source ~/.zsh/.zsh.environment
+# 2. alias
+source ~/.zsh/.zsh.alias
+# 3. Python
+source ~/.zsh/.zsh.python
+# 4. tmuxinatorを導入する時に必要なもの
+source ~/.tmuxinator/tmuxinator.zsh
+# 5. Prompt
+source ~/.zsh/.zsh.prompt
 
 ########### 補完関係#############
 #補完機能を使用する
-autoload -U compinit promptinit
-compinit
+# 補完機能
+fpath=(~/.zsh/zsh-completions/src $fpath) 
+autoload -U compinit
+compinit -u
+
 zstyle ':completion::complete:*' use-cache true
 #zstyle ':completion:*:default' menu select true
 zstyle ':completion:*:default' menu select=1
@@ -74,7 +55,11 @@ HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 function history-all { history -E 1 }
 # 履歴の選択(Zawの設定)
 function mkcd(){mkdir -p $1 && cd $1}
+<<<<<<< HEAD
 source ~/zsh_plugins/zaw/zaw.zsh
+=======
+source $HOME/.zsh/plugins/zaw/zaw.zsh
+>>>>>>> 741156d1c8302484230e524e425fac0a175ceea4
 bindkey '^h' zaw-history
 bindkey '^g' zaw-git-branches
 bindkey '^k' zaw-cdr
@@ -111,8 +96,6 @@ setopt inc_append_history
 
 
 ########### プロンプト関係#############
-PROMPT="[%n@%m %~]%(!.#.$) "
-
 #補完リストが多いときに尋ねない
 LISTMAX=1000
 
@@ -138,58 +121,12 @@ setopt auto_menu
 #補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=1
 
-# プロンプトに色を付ける
-autoload -U colors; colors
-# 一般ユーザ時
-tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
-tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
-tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
-
-# rootユーザ時(太字にし、アンダーバーをつける)
-if [ ${UID} -eq 0 ]; then
-  tmp_prompt="%B%U${tmp_prompt}%u%b"
-  tmp_prompt2="%B%U${tmp_prompt2}%u%b"
-  tmp_rprompt="%B%U${tmp_rprompt}%u%b"
-  tmp_sprompt="%B%U${tmp_sprompt}%u%b"
-fi
-
-PROMPT=$tmp_prompt    # 通常のプロンプト
-PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
-RPROMPT=$tmp_rprompt  # 右側のプロンプト
-SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
-# SSHログイン時のプロンプト
-[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-  PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
-
-
-### Title (user@hostname) ###
-case "${TERM}" in
-kterm*|xterm*|)
-  precmd() {
-    echo -ne "\033]0;${USER}@${HOST%%.*}\007"
-  }
-  ;;
-esac
-
-### Ls Color ###
-# 色の設定
-export LSCOLORS=Exfxcxdxbxegedabagacad
-# 補完時の色の設定
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-# ZLS_COLORSとは？
-export ZLS_COLORS=$LS_COLORS
-# lsコマンド時、自動で色がつく(ls -Gのようなもの？)
-export CLICOLOR=true
-# 補完候補に色を付ける
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-
 
 # cdコマンド実行後、lsを実行する
 function cd() {
   builtin cd $@ && ls;
 }
+<<<<<<< HEAD
 
 #MacTexの関連
 eval `/usr/libexec/path_helper -s`
@@ -210,3 +147,5 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 precmd() { vcs_info }    
 # プロンプト表示    
 PROMPT='[${vcs_info_msg_0_}]:%~/%f '    
+=======
+>>>>>>> 741156d1c8302484230e524e425fac0a175ceea4
