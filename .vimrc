@@ -43,10 +43,6 @@ augroup END
 :hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
-" Neard Tree 関連" 
-"NEARD TREEを自動で起動""
-autocmd VimEnter * execute 'NERDTree'  
-let g:NERDTreeShowBookmarks=1
 
 "検索結果をハイライト
 set hlsearch
@@ -59,14 +55,15 @@ set nocompatible               " Be iMproved
 filetype off                   " Required!
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
-	
-	call neobundle#begin(expand('~/.vim/bundle/'))
-	NeoBundleFetch 'Shougo/neobundle.vim'
-	call neobundle#end()
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
 endif
 
 
+call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
@@ -214,3 +211,5 @@ autocmd BufWinEnter,BufNewFile test*.py set filetype=python.test
 let g:quickrun_config = {}
 let g:quickrun_config['*'] = {'runmode': "async:remote:vimproc", 'split': 'below'}
 let g:quickrun_config['python.test'] = {'command': 'nosetests', 'exec': ['%c -v %s']}
+
+call neobundle#end()
