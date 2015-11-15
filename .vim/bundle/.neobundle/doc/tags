@@ -250,8 +250,6 @@ NERDTreeAddSubmenu()	NERD_tree.txt	/*NERDTreeAddSubmenu()*
 NERDTreeBookmarkCommands	NERD_tree.txt	/*NERDTreeBookmarkCommands*
 NERDTreeBookmarkTable	NERD_tree.txt	/*NERDTreeBookmarkTable*
 NERDTreeBookmarks	NERD_tree.txt	/*NERDTreeBookmarks*
-NERDTreeChangelog	NERD_tree.txt	/*NERDTreeChangelog*
-NERDTreeCredits	NERD_tree.txt	/*NERDTreeCredits*
 NERDTreeFunctionality	NERD_tree.txt	/*NERDTreeFunctionality*
 NERDTreeGlobalCommands	NERD_tree.txt	/*NERDTreeGlobalCommands*
 NERDTreeInvalidBookmarks	NERD_tree.txt	/*NERDTreeInvalidBookmarks*
