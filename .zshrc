@@ -55,7 +55,15 @@ HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] "
 function history-all { history -E 1 }
 # 履歴の選択(Zawの設定)
 function mkcd(){mkdir -p $1 && cd $1}
+<<<<<<< HEAD
 source $HOME/.zsh/plugins/zaw/zaw.zsh
+=======
+<<<<<<< HEAD
+source ~/zsh_plugins/zaw/zaw.zsh
+=======
+source $HOME/.zsh/plugins/zaw/zaw.zsh
+>>>>>>> 741156d1c8302484230e524e425fac0a175ceea4
+>>>>>>> 4c3b8c9fbd57f490e9e81369b683e9e63547da13
 bindkey '^h' zaw-history
 bindkey '^g' zaw-git-branches
 bindkey '^k' zaw-cdr
@@ -122,3 +130,29 @@ zstyle ':completion:*:default' menu select=1
 function cd() {
   builtin cd $@ && ls;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+#MacTexの関連
+eval `/usr/libexec/path_helper -s`
+
+#Python関連読み込み
+source ~/.zsh.python
+
+########### Git関連 #############
+# vcs_infoロード    
+autoload -Uz vcs_info    
+# PROMPT変数内で変数参照する    
+setopt prompt_subst    
+
+# vcsの表示    
+zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'    
+zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'    
+# プロンプト表示直前にvcs_info呼び出し    
+precmd() { vcs_info }    
+# プロンプト表示    
+PROMPT='[${vcs_info_msg_0_}]:%~/%f '    
+=======
+>>>>>>> 741156d1c8302484230e524e425fac0a175ceea4
+>>>>>>> 4c3b8c9fbd57f490e9e81369b683e9e63547da13
