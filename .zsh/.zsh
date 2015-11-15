@@ -1,0 +1,1 @@
+/home/iwasawa/dotfiles/.zsh

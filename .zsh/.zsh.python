@@ -1,0 +1,15 @@
+# PYTHON PATHの設定
+PYTHONPATH=$HOME/lib/:$PYTHONPATH
+PYTHONPATH=$HOME/SpatioTemporalProject/lib/:$PYTHONPATH
+PYTHONPATH=$HOME/lib/pylearn2/pylearn2/scripts/:$PYTHONPATH
+PYTHONPATH=$HOME/GoogleDrive/Wheelchair2012Result/lib/:$PYTHONPATH
+PYTHONPATH=/share/iwasawa/test-data/:$PYTHONPATH
+PYTHONPATH=$HOME/lib/keras/:$PYTHONPATH
+export PYTHONPATH
+
+# Original Data
+export WHEEL2012_DATA_PATH=$HOME/data-2012-wheelchair/data-format2/
+
+# Pylearn2
+export PYLEARN2_DATA_PATH=$HOME/pylearn2_data
+export PYLEARN2_VIEWER_COMMAND="open -Wn"

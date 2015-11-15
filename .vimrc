@@ -1,6 +1,4 @@
-
 "ファイルエンコード
-
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set ignorecase "検索のときに大文字小文字を区別しない
@@ -13,13 +11,17 @@ set tw=0
 "Color Preference
 syntax on "カラー設定を有効に
 set background=dark
-colorscheme desert
+colorscheme molokai
+" molokaiをちょっとだけ改造
+" http://shocrunch.hatenablog.com/entry/2015/01/15/234555
+hi Comment ctermfg=102
+hi Visual  ctermbg=236
 
+"" 基本設定
 set wildmenu "コマンドラインを拡張モードに
-
 set expandtab
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set noexpandtab
 set noautoindent
 set number
@@ -43,14 +45,11 @@ augroup END
 :hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
-
 "検索結果をハイライト
 set hlsearch
-
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "Neobundle関連の設定
-
 set nocompatible               " Be iMproved
 filetype off                   " Required!
 
@@ -81,6 +80,8 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'dbext.vim'
 NeoBundle 'AutoClose'
 
+NeoBundle 'Shougo/unite.vim'
+
 "補完＆スニペット"
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neocomplete'
@@ -92,37 +93,37 @@ NeoBundle 'Shougo/neosnippet-snippets'
 "PEP-8(Python Coding Rules)"
 NeoBundle 'scrooloose/syntastic'
 
+NeoBundle 'stephpy/vim-yaml'
+
 " Jedi Vim
-NeoBundleLazy "davidhalter/jedi-vim", {
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"],
-      \ },
-      \ "build": {
-      \   "mac": "pip install jedi",
-      \   "unix": "pip install jedi",
-      \ }}
-let s:hooks = neobundle#get_hooks("jedi-vim")
-function! s:hooks.on_source(bundle)
-  " jediにvimの設定を任せると'completeopt+=preview'するので
-  " 自動設定機能をOFFにし手動で設定を行う
-  let g:jedi#auto_vim_configuration = 0
-  " 補完の最初の項目が選択された状態だと使いにくいためオフにする
-  let g:jedi#popup_select_first = 0
-  " quickrunと被るため大文字に変更
-  let g:jedi#rename_command = '<Leader>R'
-  " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
-  let g:jedi#goto_command = '<Leader>G'
+""NeoBundleLazy "davidhalter/jedi-vim", {
+""      \ "autoload": {
+""      \   "filetypes": ["python", "python3", "djangohtml"],
+""      \ },
+""      \ "build": {
+""      \   "mac": "pip install jedi",
+""      \   "unix": "pip install jedi",
+""      \ }}
+""let s:hooks = neobundle#get_hooks("jedi-vim")
+""function! s:hooks.on_source(bundle)
+""  " jediにvimの設定を任せると'completeopt+=preview'するので
+""  " 自動設定機能をOFFにし手動で設定を行う
+""  let g:jedi#auto_vim_configuration = 0
+""  " 補完の最初の項目が選択された状態だと使いにくいためオフにする
+""  let g:jedi#popup_select_first = 0
+""  " quickrunと被るため大文字に変更
+""  let g:jedi#rename_command = '<Leader>R'
+""  " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
+""  let g:jedi#goto_command = '<Leader>G'
+"" endfunction
 
 
-endfunction
-let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 "Installしたいファイルリストを書く
 "
 "
 
 filetype plugin on
 filetype indent on
-
 
 "" neocomplcache
 ""Disable AutoComplPop.
