@@ -8,7 +8,7 @@ PYTHONPATH=$HOME/lib/keras/:$PYTHONPATH
 export PYTHONPATH
 
 # Original Data
-export WHEEL2012_DATA_PATH=$HOME/data-2012-wheelchair/data-format2/
+export WHEEL2012_DATA_PATH=$HOME/dl_research/data/data-2012-wheelchair/data-format2/
 
 # Pylearn2
 export PYLEARN2_DATA_PATH=$HOME/pylearn2_data
