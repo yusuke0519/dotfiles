@@ -1,11 +1,11 @@
 #ssh
-alias ssh-rd4='ssh iwasawa@133.11.90.86'
-alias ssh-ylab='ssh iwasawa@YLabMacPro.1284357760.members.btmm.icloud.com'
-alias ssh-iris='ssh iwasawa@157.82.14.159 -p 8125'
-alias tmux='~/tmux/tmux'
+# alias ssh-rd4='ssh iwasawa@133.11.90.86'
+# alias ssh-ylab='ssh iwasawa@YLabMacPro.1284357760.members.btmm.icloud.com'
+# alias ssh-iris='ssh iwasawa@157.82.14.159 -p 8125'
+# alias tmux='~/tmux/tmux'
 
 #vim（MacVimをvimとして起動するように）
-case "${OSTYPE}" in
+# case "${OSTYPE}" in
 # Mac(Unix)
 # darwin*)
 #     alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'

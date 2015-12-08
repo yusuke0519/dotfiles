@@ -6,7 +6,7 @@ source ~/.zsh/.zsh.alias
 # 3. Python
 source ~/.zsh/.zsh.python
 # 4. tmuxinatorを導入する時に必要なもの
-source ~/.tmuxinator/tmuxinator.zsh
+# source ~/.tmuxinator/tmuxinator.zsh
 # 5. Prompt
 source ~/.zsh/.zsh.prompt
 
