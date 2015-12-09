@@ -15,12 +15,9 @@ export PATH=$PATH:$HOME/lib/pylearn2/pylearn2/scripts/
 # Jobman
 export PATH=$PATH:~/lib/Jobman/bin
 # GPU
-export CUDA_HOME=/usr/local/cuda-6.5
+export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64
-PATH=${CUDA_HOME}/bin:${PATH}
-# export PATH=$PATH:/usr/bin/
-# export CUDA_HOME=/usr/bin/
-# export LD_LIBRARY_PATH=/usr/bin/lib64:$LD_LIBRARY_PATH
+export PATH=${CUDA_HOME}/bin:$PATH
 # Manual
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 # Pyenv

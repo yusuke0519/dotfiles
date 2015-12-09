@@ -11,8 +11,6 @@ pyenv global anaconda-2.4.0
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
-#
-
 # submoduleを追加
 git submodule init .vim/bundle/neobundle.vim
 git submodule update .vim/bundle/neobundle.vim
@@ -25,4 +23,8 @@ git submodule update .zsh/plugins/zaw
 git config --global user.email "iwasawa@weblab.t.u-tokyo.ac.jp"
 git config --global user.name "Yusuke IWASAWA"
 
-
+# Python関係で必要なライブラリのインストール
+pip uninstall theano
+pip install git+https://github.com/Theano/Theano
+pip install keras
+pip install git+https://github.com/EderSantana/seya/tree/master/seya
