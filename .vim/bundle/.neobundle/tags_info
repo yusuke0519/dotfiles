@@ -1,13 +1,9 @@
-AutoClose
-dbext.vim
 neobundle.vim
 neocomplcache.vim
 neocomplete
 neosnippet
 neosnippet-snippets
-nerdtree
 syntastic
 unite.vim
-vim-rails
 vim-yaml
-vimproc
+vimproc.vim
