@@ -3,3 +3,4 @@ penv1/
 *.swp
 
 .vim/bundle/*
+.vim/bundle/neobundle.vim
