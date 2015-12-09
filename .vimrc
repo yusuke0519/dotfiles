@@ -305,6 +305,13 @@ NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'stephpy/vim-yaml'
 
+" Status Lineのカスタマイズ
+NeoBundle 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+set laststatus=2
+
 call neobundle#end()
 
 """ Neo Bundle End
