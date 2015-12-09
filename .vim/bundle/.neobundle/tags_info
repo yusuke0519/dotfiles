@@ -1,9 +1,17 @@
+ctrlp.vim
+jedi-vim
 neobundle.vim
 neocomplcache.vim
 neocomplete
+neomru.vim
 neosnippet
 neosnippet-snippets
 syntastic
+tagbar
 unite.vim
+vim-fugitive
+vim-quickrun
+vim-surround
 vim-yaml
 vimproc.vim
+yankround.vim

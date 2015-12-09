@@ -1,6 +1,8 @@
 # apt-getで必要なものをインストール 
 sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 sudo apt-get install zsh
+sudo apt-get install vim-athena
+sudo apt-get install exuberant-ctags
 
 # pyenv
 git clone git://github.com/yyuu/pyenv.git ~/.pyenv
