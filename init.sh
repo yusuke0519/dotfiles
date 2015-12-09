@@ -25,8 +25,3 @@ git submodule update .zsh/plugins/zaw
 git config --global user.email "iwasawa@weblab.t.u-tokyo.ac.jp"
 git config --global user.name "Yusuke IWASAWA"
 
-# Python関係で必要なライブラリのインストール
-pip uninstall theano
-pip install git+https://github.com/Theano/Theano
-pip install keras
-pip install git+https://github.com/EderSantana/seya/tree/master/seya
