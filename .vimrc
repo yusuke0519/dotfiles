@@ -177,6 +177,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
+if !exists('g:neocomplcache_force_omni_patterns')
   let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
