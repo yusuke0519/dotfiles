@@ -1,5 +1,5 @@
 # apt-getで必要なものをインストール 
-sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev libhdf5-dev
 sudo apt-get install zsh
 sudo apt-get install vim-athena  # vimを+luaにする
 sudo apt-get install exuberant-ctags  # vim tagbarを使うため
