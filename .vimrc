@@ -1,6 +1,7 @@
 "ファイルエンコード
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fenc=utf-8
+" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set ignorecase "検索のときに大文字小文字を区別しない
 set smartcase "検索のときに大文字が含まれている場合は区別して検索する
 set wrapscan "最後まで検索したら先頭に戻る
