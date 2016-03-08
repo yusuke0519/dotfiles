@@ -6,6 +6,9 @@ sudo apt-get install exuberant-ctags  # vim tagbarを使うため
 
 # pyenv
 git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 pyenv install anaconda-2.4.0
 pyenv global anaconda-2.4.0
 

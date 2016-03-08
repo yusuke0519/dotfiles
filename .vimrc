@@ -97,7 +97,7 @@ nnoremap <silent> [unite]y  :<C-u>Unite yankround <CR>
 
 "補完＆スニペット"
 NeoBundle 'Shougo/neocomplcache.vim'
-NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neocomplete.vim'
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
