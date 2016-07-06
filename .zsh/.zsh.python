@@ -5,6 +5,7 @@ PYTHONPATH=$HOME/lib/pylearn2/pylearn2/scripts/:$PYTHONPATH
 PYTHONPATH=$HOME/GoogleDrive/Wheelchair2012Result/lib/:$PYTHONPATH
 PYTHONPATH=/share/iwasawa/test-data/:$PYTHONPATH
 PYTHONPATH=$HOME/lib/keras/:$PYTHONPATH
+PYTHONPATH=$HOME/build_caffe/caffe/python/:$PYTHONPATH
 export PYTHONPATH
 
 # Original Data
