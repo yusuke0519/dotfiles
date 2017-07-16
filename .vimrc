@@ -23,7 +23,6 @@ set wildmenu "コマンドラインを拡張モードに
 set expandtab
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
 set noautoindent
 set number
 set showmatch
