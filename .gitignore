@@ -2,5 +2,6 @@ penv1/
 *.DS_Store
 *.swp
 
+./.ipython/*
 .vim/bundle/*
 !.vim/bundle/neobundle.vim
