@@ -2,7 +2,7 @@ jedi-vim
 lightline.vim
 neobundle.vim
 neocomplcache.vim
-neocomplete
+neocomplete.vim
 neomru.vim
 neosnippet
 neosnippet-snippets

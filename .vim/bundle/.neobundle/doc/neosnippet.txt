@@ -2,26 +2,8 @@
 		The neo-snippet plugin contains snippet source
 
 Version: 5.0
-Author: Shougo <Shougo.Matsu@gmail.com>
-License: MIT license  {{{
-    Permission is hereby granted, free of charge, to any person obtaining
-    a copy of this software and associated documentation files (the
-    "Software"), to deal in the Software without restriction, including
-    without limitation the rights to use, copy, modify, merge, publish,
-    distribute, sublicense, and/or sell copies of the Software, and to
-    permit persons to whom the Software is furnished to do so, subject to
-    the following conditions:
-    The above copyright notice and this permission notice shall be included
-    in all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-}}}
+Author: Shougo <Shougo.Matsu at gmail.com>
+License: MIT license
 
 CONTENTS			*neosnippet-contents*
 
@@ -230,18 +212,31 @@ g:neosnippet#enable_conceal_markers
 
 					*g:neosnippet#enable_completed_snippet*
 g:neosnippet#enable_completed_snippet
-		If this variable is not 0, neosnippet will expand the function
-		prototype when |CompleteDone| autocmd.
-		Note: It is disabled if you have installed
-		|neopairs.vim| plugin.
+		If this variable is not 0, neosnippet can expand the function
+		prototype.
 
 		The default value is 0.
+		
+					*g:neosnippet#enable_optional_arguments*
+g:neosnippet#enable_optional_arguments
+		If this variable is not 0, neosnippet will conceal commas in
+		expanded arguments from completed snippets.
+		
+		Useful for languages where arguments are optional by default.
+
+		Note: For use with |g:neosnippet#enable_completed_snippet| = 1
+
+		The default value is 1.
 
 					*g:neosnippet#enable_auto_clear_markers*
 g:neosnippet#enable_auto_clear_markers
 		If this variable is not 0, neosnippet will clear the markers
 		in the buffer when |BufWritePost|, |CursorMoved| and
 		|CursorMovedI| autocmd.
+
+		Note: The feature does not work for multi lines snippets.
+		If you want to clear them, you should use
+		|:NeoSnippetClearMarkers| instead.
 
 		The default value is 1.
 
@@ -272,32 +267,32 @@ b:neosnippet_disable_snippet_triggers
 ------------------------------------------------------------------------------
 KEY MAPPINGS 					*neosnippet-key-mappings*
 
-					*<Plug>(neosnippet_expand_or_jump)*
-<Plug>(neosnippet_expand_or_jump)
+					*i_<Plug>(neosnippet_expand_or_jump)*
+i_<Plug>(neosnippet_expand_or_jump)
 					*s_<Plug>(neosnippet_expand_or_jump)*
 s_<Plug>(neosnippet_expand_or_jump)
 		Expand a snippet in the current cursor position. If there is
 		no snippet available it jumps to the next placeholder of the
 		buffer.
 
-				*<Plug>(neosnippet_jump_or_expand)*
-<Plug>(neosnippet_jump_or_expand)
+				*i_<Plug>(neosnippet_jump_or_expand)*
+i_<Plug>(neosnippet_jump_or_expand)
 				*s_<Plug>(neosnippet_jump_or_expand)*
 s_<Plug>(neosnippet_jump_or_expand)
 		Jump to the next available placeholder in the buffer. If there
 		is no placeholder it expands a snippet in the current cursor
 		position.
 
-						*<Plug>(neosnippet_expand)*
-<Plug>(neosnippet_expand)
+						*i_<Plug>(neosnippet_expand)*
+i_<Plug>(neosnippet_expand)
 						*s_<Plug>(neosnippet_expand)*
 s_<Plug>(neosnippet_expand)
 		Expand a snippet in current cursor position. It only takes
 		effect if there is a snippet text to expand or if you have
 		chosen a snippet from popup menu.
 
-						*<Plug>(neosnippet_jump)*
-<Plug>(neosnippet_jump)
+						*i_<Plug>(neosnippet_jump)*
+i_<Plug>(neosnippet_jump)
 						*s_<Plug>(neosnippet_jump)*
 s_<Plug>(neosnippet_jump)
 		Jump to the next placeholder key. It does not expand any
@@ -382,11 +377,13 @@ neosnippet#get_snippets_directory()
 EXAMPLES					*neosnippet-examples*
 >
 	" Plugin key-mappings.
+	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 	imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 	smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 	xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 	" SuperTab like snippets' behavior.
+	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 	"imap <expr><TAB>
 	" \ pumvisible() ? "\<C-n>" :
 	" \ neosnippet#expandable_or_jumpable() ?
@@ -401,6 +398,11 @@ EXAMPLES					*neosnippet-examples*
 
 	" Enable snipMate compatibility feature.
 	" let g:neosnippet#enable_snipmate_compatibility = 1
+
+	" Expand the completed snippet trigger by <CR>.
+	"imap <expr><CR>
+	"\ (pumvisible() && neosnippet#expandable()) ?
+	"\ "\<Plug>(neosnippet_expand)" : "\<CR>"
 
 ==============================================================================
 SNIPPET SYNTAX					*neosnippet-snippet-syntax*
