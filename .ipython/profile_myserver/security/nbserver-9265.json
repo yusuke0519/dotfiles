@@ -1,8 +1,0 @@
-{
-  "secure": false, 
-  "url": "http://localhost:10001/", 
-  "hostname": "localhost", 
-  "base_url": "/", 
-  "notebook_dir": "/home/ubuntu/.ipython/profile_myserver", 
-  "port": 10001
-}
